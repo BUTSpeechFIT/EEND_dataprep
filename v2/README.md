@@ -19,7 +19,7 @@ To run the data-generation recipe, execute `generate_data.sh`. It will calculate
 
 ## Citation
 In case of using the software please cite:\
-Federico Landini, Mireia Diez, Alicia Lozano-Diez, Lukáš Buet: [Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neur Diarization](https://arxiv.org/abs/2211.06750)
+Federico Landini, Mireia Diez, Alicia Lozano-Diez, Lukáš Burget: [Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2211.06750)
 ```
 @article{landini2022multispeaker,
   title={Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization},
