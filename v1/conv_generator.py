@@ -119,11 +119,10 @@ if __name__ == '__main__':
                 p_nspk /= p_nspk.sum()
                 nspks = min(np.random.choice(
                     max_speakers, p=p_nspk)+1, len(speakers))
-            if len(speakers) == nspks:
+            if len(speakers) <= nspks:
                 # np.random.choice fails sometimes with just few speakers
                 break
-            selected_speakers = np.random.choice(
-                speakers, nspks, replace=False)
+            selected_speakers = random.sample(speakers, nspks)
             selected_sessions = [spk.pop() for spk in selected_speakers]
             for spk in selected_speakers:
                 if not len(spk):

@@ -1,30 +1,34 @@
 # End-to-End Neural Diarization data preparation
 
 Recipe for generating training data for diarization by Brno University of Technology. \
-The recipe uses telephone recordings from Switchboard and NIST SRE evaluations to generate the conversations. This follows the [data setup proposed by Hitachi](https://github.com/hitachi-speech/EEND/blob/b851eecd8d7a966487ed3e4ff934a1581a73cc9e/egs/callhome/v1/run_prepare_shared_eda.sh). Our recipe optionally adds reverberation and/or background noises.
+The recipe for telephone conversations is in v1 while the recipes for wide-band data are in v2.
 
-For more details, please refer to [From Simulated Mixtures to Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2204.00890)
+For more details, please refer to [From Simulated Mixtures to Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2204.00890) or [Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2211.06750)
 
 
 ## Usage
-In `config_variables.sh` set the variables:
-`KALDIDIR` with the path where you have Kaldi.
-`WORKDIR` with the directory where you want to generate the recordings (bear in mind that the default 2480 hours can be more than 0.5TB).
-`RTTMS_FILE` with the file that contains reference RTTMs from which to extract statistics about turns, pauses and overlaps. For example, those of recordings of DIHARD 3 development CTS.
-`HITACHI_EEND_DIR` with the directory where you have https://github.com/hitachi-speech/EEND Note that you will need to run the stage 0 of https://github.com/hitachi-speech/EEND/blob/master/egs/callhome/v1/run_prepare_shared_eda.sh to generate the Kaldi-style data paths and VAD labels for Switchboard and SRE sets.
-
-To run the data-generation recipe, execute `generate_data.sh`. It will calculate statistics from the RTTMs, define train and validation sets of speakers, define the conversations and generate their corresponding Kaldi-style data directories. Then, given the choice of augmentations (reverb and noises), it will generate the waveforms and produce their data directories.
-
+Refer to the READMEs in the specific versions.
 
 
 ## Citation
 In case of using the software please cite:\
+
 Federico Landini, Alicia Lozano-Diez, Mireia Diez, Luk√°≈° Burget: [From Simulated Mixtures to Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2204.00890)
 ```
 @article{landini2022simulated,
   title={From Simulated Mixtures to Simulated Conversations as Training Data for End-to-End Neural Diarization},
   author={Landini, Federico and Lozano-Diez, Alicia and Diez, Mireia and Burget, Luk{\'a}{\v{s}}},
   journal={arXiv preprint arXiv:2204.00890},
+  year={2022}
+}
+```
+
+Federico Landini, Mireia Diez, Alicia Lozano-Diez, Luk√≈ Burget: [Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2211.06750)
+```
+@article{landini2022multispeaker,
+  title={Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization},
+  author={Landini, Federico and Diez, Mireia and Lozano-Diez, Alicia and Burget, Luk{\'a}{\v{s}}},
+  journal={arXiv preprint arXiv:2211.06750},
   year={2022}
 }
 ```

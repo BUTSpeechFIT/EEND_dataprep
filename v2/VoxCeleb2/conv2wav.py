@@ -104,6 +104,9 @@ if __name__ == '__main__':
                            conversation[:, 2] + conversation[:, 4])
 
         all_session_files = np.unique(np.array([conversation[:, 1]]))
+        # replace underscores to obtain paths
+        for i in range(len(all_session_files)):
+            all_session_files[i] = all_session_files[i].replace('_','/',4)
 
         all_session_data = {}
 
@@ -134,7 +137,7 @@ if __name__ == '__main__':
 
         out = np.zeros(last_seg_end)
         for seg in conversation:
-            fname = seg[1]
+            fname = seg[1].replace('_','/',4)
             strt, end, pos = seg[2:]
             data = all_session_data[fname]
             if end > data.shape[0]:
