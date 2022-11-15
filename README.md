@@ -11,7 +11,7 @@ Refer to the READMEs in the specific versions.
 
 
 ## Citation
-In case of using the software please cite:\
+In case of using the software please cite:
 
 Federico Landini, Alicia Lozano-Diez, Mireia Diez, Lukáš Burget: [From Simulated Mixtures to Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2204.00890)
 ```
@@ -23,7 +23,7 @@ Federico Landini, Alicia Lozano-Diez, Mireia Diez, Lukáš Burget: [From Simulat
 }
 ```
 
-Federico Landini, Mireia Diez, Alicia Lozano-Diez, Luk�� Burget: [Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2211.06750)
+Federico Landini, Mireia Diez, Alicia Lozano-Diez, Lukáš Burget: [Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization](https://arxiv.org/abs/2211.06750)
 ```
 @article{landini2022multispeaker,
   title={Multi-Speaker and Wide-Band Simulated Conversations as Training Data for End-to-End Neural Diarization},
