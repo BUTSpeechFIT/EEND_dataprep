@@ -48,7 +48,7 @@ DATA_VAL_SUBSET_DIR=$SET_DIR/validation/data_subset
 DATA_TEST3h_DIR=$SET_DIR/test3h/data
 
 
-if [ ! -f $STATS_DIR ]; then
+if [ ! -d $STATS_DIR ]; then
     echo "Processing RTTMs to obtain statistics about turns"
     mkdir -p $STATS_DIR
 
