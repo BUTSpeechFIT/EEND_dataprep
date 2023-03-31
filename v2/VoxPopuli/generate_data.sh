@@ -48,7 +48,7 @@ DATA_VAL_SUBSET_DIR=$SET_DIR/validation/data_subset
 DATA_TEST3h_DIR=$SET_DIR/test3h/data
 
 
-if [ ! -f $STATS_DIR ]; then
+if [ ! -d $STATS_DIR ]; then
     echo "Processing RTTMs to obtain statistics about turns"
     mkdir -p $STATS_DIR
 
@@ -58,7 +58,7 @@ if [ ! -f $STATS_DIR ]; then
     # 'takeover', when, after the overlap, the second speaker keeps speaking
     # 'interrupt', when, after the overlap, the second speaker stops
     # 'both', when both speakers end the overlap simultaneously
-    cat $RTTMS_FILE | awk '{if(NR==1 || !match($2,file)){endt=$4+$5;file=$2}else{if(endt>$4){if($4+$5>endt){print "takeover",-(endt-$4);endt=$4+$5}else{if(endt>$4+$5){print "interrupt",-(endt-$4)}else{print "both",-$5}}}else{endt=$4+$5}}}' > $STATS_DIR/overlaps_info.txt
+    cat $RTTMS_FILE | awk '{if(NR==1 || !match($2,file)){endt=$4+$5;file=$2}else{if(endt>$4){if($4+$5>endt){print "takeover",-(endt-$4);endt=$4+$5}else{if(endt>$4+$5){print "interrupt",-$5}else{print "both",-$5}}}else{endt=$4+$5}}}' > $STATS_DIR/overlaps_info.txt
 
     DISTSNAME=newspk_samespk_pause_distribution_overlap_distribution
     # TODO: Replace awk by python
