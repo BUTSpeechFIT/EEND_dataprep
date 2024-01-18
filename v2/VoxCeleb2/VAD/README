@@ -1,0 +1,3 @@
+Due to the limit in the size of the files, the train set is split. Simply cat the files into a single one to recover the original format.
+
+These segments correspond to the recordings obtained by concatenating the original speech segments of each speaker in each session introducing 0.4 seconds in between in order to have a safe margin. I believe this is not the current way the VoxCeleb data are distributed but it is convenient for training speaker ID models and also in this use case because we can have longer segments than the ones in the distribution. 
