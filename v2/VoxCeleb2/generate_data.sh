@@ -19,6 +19,7 @@
 
 DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
+. ./path.sh
 . $DIR/config_variables.sh
 
 LISTS_DIR=$WORKDIR/lists
