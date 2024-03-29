@@ -9,6 +9,9 @@ for part in dev-clean test-clean dev-other test-other train-clean-100 train-clea
     if [ ! -d $DIR/Kaldidatadir/$(echo $part | sed s/-/_/g) ]; then
         # use underscore-separated names in data directories.
         local/data_prep.sh $LSDIR/LibriSpeech/$part $DIR/Kaldidatadir/$(echo $part | sed s/-/_/g)
+        for file in spk2gender spk2utt text utt2spk wav.scp; do
+            sed -i 's/lbi-//g' $DIR/Kaldidatadir/$(echo $part | sed s/-/_/g)/$file
+        done
     fi
 done
 cd $orig_path
