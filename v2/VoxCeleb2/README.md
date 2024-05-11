@@ -13,6 +13,8 @@ In `config_variables.sh` set the variables:
 
 Before generating the data, it needs to be prepared calling `prepareKaldidata_VoxCeleb2.sh`
 
+It assumes that the segments for a given speaker in a given recording are concatenated. This allows all the segments corresponding to the same session to be used for a single simulated conversation. They do not need to be in "raw" format. You could use any other format and just update the script accordingly.
+
 To run the data-generation recipe, execute `generate_data.sh`. It will calculate statistics from the RTTMs, define train and validation sets of speakers, define the conversations and generate their corresponding Kaldi-style data directories. Then, given the choice of augmentations (reverb and noises), it will generate the waveforms and produce their data directories.
 
 
